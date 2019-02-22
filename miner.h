@@ -673,6 +673,7 @@ void bench_display_results();
 struct stratum_job {
 	char *job_id;
 	unsigned char prevhash[32];
+	unsigned char finalsaplinghash[32];
 	size_t coinbase_size;
 	unsigned char *coinbase;
 	unsigned char *xnonce2;
@@ -760,6 +761,7 @@ struct work {
 	struct tx txs[POK_MAX_TXS];
 	// zec solution
 	uint8_t extra[1388];
+	bool sapling;
 };
 
 #define POK_BOOL_MASK 0x00008000
